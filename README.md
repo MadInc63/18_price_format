@@ -15,7 +15,7 @@ $python format_price.py 123456.123
 You can also run unittest for debugging.
 
 ```Bash
-python.exe tests.py
+$python.exe tests.py
 ..........
 ----------------------------------------------------------------------
 Ran 10 tests in 0.000s
