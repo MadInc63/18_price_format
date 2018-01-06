@@ -5,7 +5,7 @@ from format_price import format_price
 class FormatPriceTestCase(unittest.TestCase):
     def test_integer(self):
         price = format_price('123456789')
-        self.assertEqual(price, '123 456 789')
+        self.assertEqual(price, '123 456 789.00')
 
     def test_float_round_up(self):
         price = format_price('123456.789')
@@ -21,7 +21,7 @@ class FormatPriceTestCase(unittest.TestCase):
 
     def test_without_integer_after_dot(self):
         price = format_price('123.')
-        self.assertEqual(price, '123')
+        self.assertEqual(price, '123.00')
 
     def test_letters(self):
         price = format_price('abcdefg')
