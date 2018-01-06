@@ -20,7 +20,7 @@ def format_price(price):
     for pattern in (letters, punctuation, whitespace):
         if pattern & price_characters or tuple(price).count('.') >= 2:
             return 'Invalid date type. Enter price in float or int.'
-    return '{:,.2f}'.format(float(price)).replace(',', ' ').replace('.00', '')
+    return '{:,.2f}'.format(float(price)).replace(',', ' ')
 
 
 if __name__ == '__main__':
