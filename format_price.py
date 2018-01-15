@@ -1,5 +1,4 @@
 import argparse
-import string
 
 
 def parse_args():
@@ -12,15 +11,15 @@ def parse_args():
 
 
 def format_price(price):
-    price_characters = set(price)
-    letters = set(string.ascii_letters)
-    punctuation = set(string.punctuation)
-    punctuation.remove('.')
-    whitespace = set(string.whitespace)
-    for pattern in (letters, punctuation, whitespace):
-        if pattern & price_characters or tuple(price).count('.') >= 2:
-            return 'Invalid date type. Enter price in float or int.'
-    return '{:,.2f}'.format(float(price)).replace(',', ' ')
+    try:
+        if not isinstance(price, (int, float)):
+            price = float(price)
+        return '{:,.2f}'.format(float(price)).replace(',', ' ').replace(
+            '.00',
+            ''
+        )
+    except (ValueError, TypeError):
+        return None
 
 
 if __name__ == '__main__':

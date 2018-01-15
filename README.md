@@ -1,6 +1,6 @@
 # Price Formatter
 
-The script gives the console a formatted price.
+The script formats the price xxxx.yyyy or xxxx to the format x xxx.yy or x xxx respectively
 
 # How to use
 
